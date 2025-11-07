@@ -4,14 +4,14 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import '../services/ollama_service.dart';
 
-class UploadScreen extends StatefulWidget {
-  const UploadScreen({super.key});
+class ImageAnalyzerScreen extends StatefulWidget {
+  const ImageAnalyzerScreen({super.key});
 
   @override
-  State<UploadScreen> createState() => _UploadScreenState();
+  State<ImageAnalyzerScreen> createState() => _ImageAnalyzerScreenState();
 }
 
-class _UploadScreenState extends State<UploadScreen> {
+class _ImageAnalyzerScreenState extends State<ImageAnalyzerScreen> {
   File? _selectedImage;
   bool _isAnalyzing = false;
   String? _errorMessage;
@@ -254,7 +254,6 @@ class _UploadScreenState extends State<UploadScreen> {
             ),
             const SizedBox(height: 16),
             if (_selectedImage != null) ...[
-              // Analyze Image button (works without uploading)
               ElevatedButton.icon(
                 onPressed: _isAnalyzing ? null : _analyzeImageWithOllama,
                 icon: const Icon(Icons.auto_awesome),
@@ -266,7 +265,7 @@ class _UploadScreenState extends State<UploadScreen> {
               ),
               const SizedBox(height: 8),
               Text(
-                'Get AI-generated title and description (no upload required)',
+                'Get AI-generated title and description',
                 style: TextStyle(
                   fontSize: 12,
                   color: Colors.grey.shade600,
@@ -309,3 +308,4 @@ class _UploadScreenState extends State<UploadScreen> {
     );
   }
 }
+

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/upload_screen.dart';
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Image Upload App',
+      title: 'Ollama AI Features',
       theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
-      home: const UploadScreen(),
+      home: const HomeScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
